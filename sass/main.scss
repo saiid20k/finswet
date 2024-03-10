@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+$royalBlue: #2405f2;
+$darkBlue: #282938;
+$tintBlue: #1c1e53;
+$wihte: #ffffff;
+$grey: #f4f5f5;
+$accent: #eef4fa;
+$yellow: #fcd980;
+
+$theme-colors: (
+  "primary": $tintBlue,
+  "secondary": $accent,
+  "wihte": $wihte,
+  "light": $grey,
+  "dark": $darkBlue,
+);
+
+$custom-colors: (
+  "blue": $royalBlue,
+  "yellow": $yellow,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body{
+  padding-top: 56px;
+}
+
+img {
+  width: 100% !important;
+  height: 100%;
+}
+section {
+  overflow: hidden;
+}
+.img-cover {
+  width: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+input,textarea,select {
+  box-shadow: none !important;
+  text-transform: capitalize;
+}
+textarea.message {
+  height: 200px;
+  resize: none;
+}
+a {
+  text-decoration: none !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+};
+
+.h1 {
+  font-size: 54px;
+  line-height: 74px;
+}
+
+.h2 {
+  font-size: 48px;
+  line-height: 64px;
+}
+
+.h3 {
+  font-size: 38px;
+  line-height: 56px;
+}
+
+.h4 {
+  font-size: 36px;
+  line-height: 56px;
+}
+
+.h5 {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.h6 {
+  font-size: 20px;
+  line-height: 28px;
+}
+.text-1 {
+  color: $darkBlue;
+  font-size: 16px;
+  line-height: 22px;
+}
+.label-1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (min-width:0px) and (max-width:576px) {
+  .h1 {
+    font-size: 44px;
+    line-height: 64px;
+  }
+  
+  .h2 {
+    font-size: 38px;
+    line-height: 54px;
+  }
+  
+  .h3 {
+    font-size: 32px;
+    line-height: 46px;
+  }
+  
+  .h4 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .h5 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  
+  .h6 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.btn {
+  box-shadow: none !important;
+  border-radius: 25px;
+  text-transform: capitalize;
+}
+.btn-primary {
+  background-color: $yellow !important;
+  color: #000 !important;
+  padding: 12px 32px;
+  border: none;
+  &:hover {
+    background-color: #fde4a6 !important;
+    color: #000 !important;
+  }
+  &:active {
+    background-color: #fde4a6 !important;
+    color: #000 !important;
+  }
+}
+.btn-secondary {
+  background-color: $darkBlue !important;
+  color: $wihte !important;
+  padding: 12px 32px;
+  border: none;
+  &:hover {
+    background-color: #535460 !important;
+  }
+  &:active {
+    background-color: #535460 !important;
+  }
+}
+
+.box-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-home {
+  width: 100%;
+  min-height: 760px;
+}
+.header-work  {
+  width: 100%;
+  min-height: 450px;
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-left: 4px solid $yellow;
+}
+
+.contact .img {
+  position: relative;
+  background: url("../image/woman-writing-on-paper.png") center;
+  background-size: cover;
+}
+.contact .img .content {
+  position: relative;
+  z-index: 1;
+}
+.contact .img:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.our-work .card-img-overlay {
+  opacity: 0;
+  background: linear-gradient(18deg, #1C1E53, #1c1e5396);
+  transition: opacity 0.4s ease-in-out;
+}
+.our-work .card-content {
+  transform: translateY(10px);
+  transition: transform 0.4s ease-in-out;
+}
+.our-work .card:hover .card-content {
+  transform: translateY(0px);
+}
+.our-work .card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+@media (min-width:0px) and (max-width:992px) {
+  .our-work .card-img-overlay {
+    width: 100% !important;
+  }
+}
+
+.line {
+  border-top: 2px dashed $royalBlue;
+}
+
